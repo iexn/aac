@@ -22,24 +22,8 @@ export const authRoutes = [
             },
             {
                 path: 'user',
-                component: () => import('@/views/Authorization/User/User.vue'),
+                component: () => import('@/views/Auth/User/index.vue'),
                 name: 'User',
-                meta: {
-                    title: '账号管理'
-                }
-            },
-            {
-                path: 'menu',
-                component: () => import('@/views/Authorization/Menu/Menu.vue'),
-                name: 'Menu',
-                meta: {
-                    title: '账号管理'
-                }
-            },
-            {
-                path: 'role',
-                component: () => import('@/views/Authorization/Role/Role.vue'),
-                name: 'Role',
                 meta: {
                     title: '账号管理'
                 }
