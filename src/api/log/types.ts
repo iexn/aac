@@ -1,7 +1,7 @@
-interface PlayformModule {
-    supervision: '数据监管';
-    survey: '供应商调查计划';
-}
+import { platformModules } from '.';
+
+// 模块取值
+type PlatformModule = (typeof platformModules)[number]['value'];
 
 /**
  * 单条操作日志
@@ -10,18 +10,17 @@ export interface Log {
     id: ID;
     name: string;
     time: `${number}-${number}-${number} ${number}:${number}`;
-    module: keyof PlayformModule;
+    module: PlatformModule | '';
     content: string;
 }
 
 /**
  * 操作日志查询字段
  */
-export interface LogFilters {
-    text: string;
-    startTime: Date;
-    endTime: Date;
-    module: keyof PlayformModule;
+export interface LogSchema {
+    text?: string;
+    time?: [Date, Date];
+    module?: PlatformModule | '';
     page?: number;
     size?: number;
 }
