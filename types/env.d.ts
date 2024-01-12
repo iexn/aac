@@ -30,3 +30,19 @@ declare global {
 }
 
 type ID = `${number}`;
+
+declare interface PaginationType {
+    current: number;
+    size: number;
+    total: number;
+    pages?: number;
+}
+
+declare interface PageList<T> {
+    list: T[];
+    page: {
+        total: ID;
+        current: ID;
+        size: ID;
+    };
+}

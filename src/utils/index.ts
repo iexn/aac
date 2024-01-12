@@ -132,3 +132,42 @@ export function objToFormData(obj: Recordable) {
     });
     return formData;
 }
+
+export function pw<T>(promise: Promise<T>): Promise<[Error, null] | [null, T]> {
+    return new Promise<[Error, null] | [null, T]>((resolve) => {
+        promise
+            .then((result) => {
+                resolve([null, result]);
+            })
+            .catch((error) => {
+                resolve([error, null]);
+            });
+    });
+}
+
+export const moneyString = (value: number | string = 0, prefix = '¥') => {
+    const [integer, decimal] = Number(value).toFixed(2).split('.');
+    const money = Number(integer).toLocaleString('en-US') + '.' + decimal;
+
+    if (prefix == '') {
+        return money;
+    }
+
+    return `${prefix.trim()} ${money}`;
+};
+
+export const transString = (str: number | undefined): ID | undefined => {
+    if (str == undefined) {
+        return undefined;
+    }
+
+    return String(str) as ID;
+};
+
+export const pageSizes = [10, 20, 50, 100];
+
+export const sleep = (milliseconds: number): Promise<void> => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), milliseconds);
+    });
+};

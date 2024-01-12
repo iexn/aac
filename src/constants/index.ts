@@ -1,7 +1,7 @@
 /**
  * 请求成功状态码
  */
-export const SUCCESS_CODE = 0;
+export const SUCCESS_CODE = 200;
 
 /**
  * 请求contentType
@@ -11,7 +11,7 @@ export const CONTENT_TYPE: AxiosContentType = 'application/json';
 /**
  * 请求超时时间
  */
-export const REQUEST_TIMEOUT = 60000;
+export const REQUEST_TIMEOUT = 0;
 
 /**
  * 不重定向白名单

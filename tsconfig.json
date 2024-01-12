@@ -16,7 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "strictFunctionTypes": false,
-    // "noUnusedLocals": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
@@ -32,6 +32,6 @@
       "vite-plugin-svg-icons/client"
     ]
   },
-  "include": ["src", "types/**/*.d.ts", "mock/**/*.ts"]
-  // "exclude": ["dist", "node_modules"]
+  "include": ["src", "types/**/*.d.ts", "mock/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
 }
