@@ -6,6 +6,7 @@ const request = (option: AxiosConfig) => {
     const { url, method, params, data, headers, responseType } = option;
 
     const userStore = useUserStoreWithOut();
+    console.log(userStore);
     return service.request({
         url: url,
         method,

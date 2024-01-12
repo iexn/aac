@@ -2,10 +2,10 @@ import { Layout } from '@/utils/routerHelper';
 
 export const authRoutes = [
     {
-        path: '/authorization',
+        path: '/auth',
         component: Layout,
-        redirect: '/authorization/user',
-        name: 'Authorization',
+        redirect: '/auth/role',
+        name: 'Auth',
         meta: {
             title: '权限管理',
             icon: 'carbon:two-factor-authentication',
@@ -13,9 +13,9 @@ export const authRoutes = [
         },
         children: [
             {
-                path: 'department',
-                component: () => import('@/views/Authorization/Department/Department.vue'),
-                name: 'Department',
+                path: 'role',
+                component: () => import('@/views/Auth/Role/index.vue'),
+                name: 'AuthRole',
                 meta: {
                     title: '角色管理'
                 }

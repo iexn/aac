@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import { ref, Ref, onMounted } from 'vue';
 import { ElMessage, ElTableColumn, ElFormItem, ElInput, ElSelect, ElOption, ElDatePicker, ElButton } from 'element-plus';
 import { ContentWrap } from '@/components/ContentWrap';
 import { useFetchList } from '@/hooks/inject/useFetchList';
 import { getLogs, platformModules } from '@/api/log';
-import { ref, Ref } from 'vue';
 import { LogSchema } from '@/api/log/types';
 import { useSearchIcon } from '@/hooks/inject/usePreIcon';
 import FullTable from '@/components/Custom/FullTable.vue';
 import { pw } from '@/utils';
-import { onMounted } from 'vue';
 
 const SearchIcon = useSearchIcon();
 
@@ -60,10 +59,10 @@ onMounted(() => loadData());
                 </ElFormItem>
             </template>
             <template #table>
-                <el-table-column prop="name" label="操作人" width="180" />
-                <el-table-column prop="time" label="操作时间" width="180" />
-                <el-table-column prop="module" label="操作模块" width="180" />
-                <el-table-column prop="content" label="操作描述" />
+                <ElTableColumn prop="name" label="操作人" width="180" />
+                <ElTableColumn prop="time" label="操作时间" width="180" />
+                <ElTableColumn prop="module" label="操作模块" width="180" />
+                <ElTableColumn prop="content" label="操作描述" />
             </template>
         </FullTable>
     </ContentWrap>

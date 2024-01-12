@@ -9,3 +9,13 @@ export const useSearchIcon = () => {
 
     return SearchIcon;
 };
+
+let PlusIcon;
+
+export const usePlusIcon = () => {
+    if (!PlusIcon) {
+        PlusIcon = useIcon({ icon: 'ic:round-plus' });
+    }
+
+    return PlusIcon;
+};
