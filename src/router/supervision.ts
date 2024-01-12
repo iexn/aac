@@ -42,29 +42,11 @@ export const supervisionRoutes = [
                 }
             },
             {
-                path: 'example-edit',
-                component: () => import('@/views/Example/Page/ExampleEdit.vue'),
-                name: 'ExampleEdit',
+                path: 'provider',
+                component: () => import('@/views/Supervision/Provider/index.vue'),
+                name: 'SupervisionProvider',
                 meta: {
-                    title: '供应商管理',
-                    noTagsView: true,
-                    noCache: true,
-                    hidden: false,
-                    canTo: true,
-                    activeMenu: '/example/example-page'
-                }
-            },
-            {
-                path: 'example-detail',
-                component: () => import('@/views/Example/Page/ExampleDetail.vue'),
-                name: 'ExampleDetail',
-                meta: {
-                    title: '操作日志',
-                    noTagsView: true,
-                    noCache: true,
-                    hidden: false,
-                    canTo: true,
-                    activeMenu: '/example/example-page'
+                    title: '供应商管理'
                 }
             }
         ]
